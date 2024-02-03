@@ -83,3 +83,9 @@ int RICK45B_Stringcmp(char const *string1, char const *string2);
  * Function that mimics the string.h's function 'strcmp'.
  * Returns -1 if an error has occurred, 0 if the strings are equal, a number >0 otherwise.
 */
+
+void RICK45B_Memmove(void *a, void *b, size_t size);
+/*
+ * Function that mimics 'string.h's function 'memmove'.
+ * Returns nothing.
+*/

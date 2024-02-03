@@ -1,6 +1,6 @@
 /*
  * @LICENSE: This file has no copyright assigned and is placed in the Public Domain.
- * @AUTHOR: Riccardo Giovanni Gualiumi 2024
+ * @AUTHOR: Riccardo Giovanni Gualiumi 2024, Linda Monfermoso 2024
  * No Software Warranty. The Software and related documentation are provided “AS IS” and without any warranty of any kind and Seller EXPRESSLY DISCLAIMS ALL WARRANTIES, EXPRESS
  * OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 */
@@ -21,14 +21,14 @@ void RICK45B_SetError(char *errorMsg)
         RICK45B_CopyString(errorMsg, RICK45B.GetError, RICK45B_Strlen(errorMsg));
 }
 
-void RICK45B_CopyString(char const *source, char *dest, size_t lenght){
+void RICK45B_CopyString(char const *source, char *dest, size_t length){
 
-    if (lenght>0)
+    if (length>0)
     {
         size_t cnt = 0;
-        for (cnt = 0; cnt<lenght; cnt++)
+        for (cnt = 0; cnt<length; cnt++)
             dest[cnt] = source[cnt];
-        dest[lenght] = '\0';
+        dest[length] = '\0';
     }
 }
 
@@ -49,3 +49,20 @@ int RICK45B_Stringcmp(char const *string1, char const *string2)
     return 0;   /*strings contain the same characters*/
 
 }
+
+void RICK45B_Memmove(void *a, void *b, size_t size) {
+    unsigned char *pa = a;
+    unsigned char *pb = b;
+
+    if(a==b) /*nothing to move*/
+        return;
+
+    for(size_t i=0; i<size; i++) { /*swaps contents byte by byte*/
+        unsigned char tmp = *pa;
+        *pa = *pb;
+        *pb = tmp;
+        pa++;
+        pb++;
+    }
+}
+
