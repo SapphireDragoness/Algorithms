@@ -86,6 +86,12 @@ int RICK45B_Stringcmp(char const *string1, char const *string2);
 
 void RICK45B_Memmove(void *a, void *b, size_t size);
 /*
- * Function that mimics 'string.h's function 'memmove'.
+ * Function that mimics string.h's function 'memmove'.
+ * Returns nothing.
+*/
+
+void RICK45B_Memset(void *dest, int ch, size_t count);
+/*
+ * Function that mimics string.h's function 'memset'.
  * Returns nothing.
 */

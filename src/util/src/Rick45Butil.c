@@ -57,12 +57,21 @@ void RICK45B_Memmove(void *a, void *b, size_t size) {
     if(a==b) /*nothing to move*/
         return;
 
-    for(size_t i=0; i<size; i++) { /*swaps contents byte by byte*/
+    for(size_t i=0; i<size; ++i) { /*swaps contents byte by byte*/
         unsigned char tmp = *pa;
         *pa = *pb;
         *pb = tmp;
-        pa++;
-        pb++;
+        ++pa;
+        ++pb;
+    }
+}
+
+void RICK45B_Memset(void *dest, int ch, size_t count) {
+    unsigned char *pdest = dest;
+
+    for(size_t i=0; i<count; ++i) {
+        *pdest = ch;
+        ++pdest;
     }
 }
 
