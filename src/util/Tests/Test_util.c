@@ -65,4 +65,8 @@ void Functions_Test()
     assert(RICK45B_Stringcmp(string1, string5)==0);
     assert(RICK45B_Stringcmp(string1, string4)>0);
     assert(RICK45B_Stringcmp(string3, string2)==-1);
+
+    char *string6 = RICK45B_Strdup(string1);
+
+    assert(strcmp("Paul", string6)==0);
 }

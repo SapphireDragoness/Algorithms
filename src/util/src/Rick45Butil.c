@@ -50,6 +50,13 @@ int RICK45B_Stringcmp(char const *string1, char const *string2)
 
 }
 
+char* RICK45B_Strdup(const char *src) {
+    char *dest = mallocFun(RICK45B_Strlen(src)*sizeof(char));
+
+    RICK45B_CopyString(src, dest);
+    return dest;
+}
+
 void RICK45B_Memmove(void *a, void *b, size_t size) {
     unsigned char *pa = a;
     unsigned char *pb = b;
